@@ -1,0 +1,863 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <asset>
+    <contributor>
+      <author>Blender User</author>
+      <authoring_tool>Blender 4.0.2 commit date:2023-12-05, commit time:07:41, hash:9be62e85b727</authoring_tool>
+    </contributor>
+    <created>2024-03-01T11:55:59</created>
+    <modified>2024-03-01T11:55:59</modified>
+    <unit name="meter" meter="1"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_cameras>
+    <camera id="Camera-camera" name="Camera">
+      <optics>
+        <technique_common>
+          <perspective>
+            <xfov sid="xfov">39.59775</xfov>
+            <aspect_ratio>1.777778</aspect_ratio>
+            <znear sid="znear">0.1</znear>
+            <zfar sid="zfar">100</zfar>
+          </perspective>
+        </technique_common>
+      </optics>
+      <extra>
+        <technique profile="blender">
+          <shiftx sid="shiftx" type="float">0</shiftx>
+          <shifty sid="shifty" type="float">0</shifty>
+          <dof_distance sid="dof_distance" type="float">10</dof_distance>
+        </technique>
+      </extra>
+    </camera>
+  </library_cameras>
+  <library_lights>
+    <light id="Light-light" name="Light">
+      <technique_common>
+        <point>
+          <color sid="color">1000 1000 1000</color>
+          <constant_attenuation>1</constant_attenuation>
+          <linear_attenuation>0</linear_attenuation>
+          <quadratic_attenuation>0</quadratic_attenuation>
+        </point>
+      </technique_common>
+      <extra>
+        <technique profile="blender">
+          <type sid="type" type="int">0</type>
+          <flag sid="flag" type="int">0</flag>
+          <mode sid="mode" type="int">1</mode>
+          <red sid="red" type="float">1</red>
+          <green sid="green" type="float">1</green>
+          <blue sid="blue" type="float">1</blue>
+          <shadow_r sid="blender_shadow_r" type="float">0</shadow_r>
+          <shadow_g sid="blender_shadow_g" type="float">0</shadow_g>
+          <shadow_b sid="blender_shadow_b" type="float">0</shadow_b>
+          <energy sid="blender_energy" type="float">1000</energy>
+          <spotsize sid="spotsize" type="float">75</spotsize>
+          <spotblend sid="spotblend" type="float">0.15</spotblend>
+          <clipsta sid="clipsta" type="float">0.04999995</clipsta>
+          <clipend sid="clipend" type="float">30.002</clipend>
+          <bias sid="bias" type="float">1</bias>
+          <radius sid="radius" type="float">0.1</radius>
+          <area_shape sid="area_shape" type="int">1</area_shape>
+          <area_size sid="area_size" type="float">0.1</area_size>
+          <area_sizey sid="area_sizey" type="float">0.1</area_sizey>
+          <area_sizez sid="area_sizez" type="float">1</area_sizez>
+        </technique>
+      </extra>
+    </light>
+  </library_lights>
+  <library_effects>
+    <effect id="gate_image_d-effect">
+      <profile_COMMON>
+        <newparam sid="gate_image_d_png-surface">
+          <surface type="2D">
+            <init_from>gate_image_d_png</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="gate_image_d_png-sampler">
+          <sampler2D>
+            <source>gate_image_d_png-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <texture texture="gate_image_d_png-sampler" texcoord="UVMap"/>
+            </diffuse>
+            <index_of_refraction>
+              <float sid="ior">1.45</float>
+            </index_of_refraction>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="gate_image_r-effect">
+      <profile_COMMON>
+        <newparam sid="gate_image_r_png-surface">
+          <surface type="2D">
+            <init_from>gate_image_r_png</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="gate_image_r_png-sampler">
+          <sampler2D>
+            <source>gate_image_r_png-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <texture texture="gate_image_r_png-sampler" texcoord="UVMap"/>
+            </diffuse>
+            <index_of_refraction>
+              <float sid="ior">1.45</float>
+            </index_of_refraction>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="gate_image_u-effect">
+      <profile_COMMON>
+        <newparam sid="gate_image_u_png-surface">
+          <surface type="2D">
+            <init_from>gate_image_u_png</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="gate_image_u_png-sampler">
+          <sampler2D>
+            <source>gate_image_u_png-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <texture texture="gate_image_u_png-sampler" texcoord="UVMap"/>
+            </diffuse>
+            <index_of_refraction>
+              <float sid="ior">1.45</float>
+            </index_of_refraction>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="gate_image_l-effect">
+      <profile_COMMON>
+        <newparam sid="gate_image_l_png-surface">
+          <surface type="2D">
+            <init_from>gate_image_l_png</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="gate_image_l_png-sampler">
+          <sampler2D>
+            <source>gate_image_l_png-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <texture texture="gate_image_l_png-sampler" texcoord="UVMap"/>
+            </diffuse>
+            <index_of_refraction>
+              <float sid="ior">1.45</float>
+            </index_of_refraction>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="Steel_-_Satin-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <color sid="diffuse">0.8 0.8 0.8 1</color>
+            </diffuse>
+            <index_of_refraction>
+              <float sid="ior">1.45</float>
+            </index_of_refraction>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="gate_image_u_001-effect">
+      <profile_COMMON>
+        <newparam sid="gate_image_u_png_001-surface">
+          <surface type="2D">
+            <init_from>gate_image_u_png_001</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="gate_image_u_png_001-sampler">
+          <sampler2D>
+            <source>gate_image_u_png_001-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <texture texture="gate_image_u_png_001-sampler" texcoord="UVMap"/>
+            </diffuse>
+            <index_of_refraction>
+              <float sid="ior">1.45</float>
+            </index_of_refraction>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="gate_image_r_001-effect">
+      <profile_COMMON>
+        <newparam sid="gate_image_r_png_001-surface">
+          <surface type="2D">
+            <init_from>gate_image_r_png_001</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="gate_image_r_png_001-sampler">
+          <sampler2D>
+            <source>gate_image_r_png_001-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <texture texture="gate_image_r_png_001-sampler" texcoord="UVMap"/>
+            </diffuse>
+            <index_of_refraction>
+              <float sid="ior">1.45</float>
+            </index_of_refraction>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="gate_image_l_001-effect">
+      <profile_COMMON>
+        <newparam sid="gate_image_l_png_001-surface">
+          <surface type="2D">
+            <init_from>gate_image_l_png_001</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="gate_image_l_png_001-sampler">
+          <sampler2D>
+            <source>gate_image_l_png_001-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <texture texture="gate_image_l_png_001-sampler" texcoord="UVMap"/>
+            </diffuse>
+            <index_of_refraction>
+              <float sid="ior">1.45</float>
+            </index_of_refraction>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="gate_image_d_001-effect">
+      <profile_COMMON>
+        <newparam sid="gate_image_d_png_001-surface">
+          <surface type="2D">
+            <init_from>gate_image_d_png_001</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="gate_image_d_png_001-sampler">
+          <sampler2D>
+            <source>gate_image_d_png_001-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <texture texture="gate_image_d_png_001-sampler" texcoord="UVMap"/>
+            </diffuse>
+            <index_of_refraction>
+              <float sid="ior">1.45</float>
+            </index_of_refraction>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_images>
+    <image id="gate_image_d_png" name="gate_image_d_png">
+      <init_from>gate_image_d.png</init_from>
+    </image>
+    <image id="gate_image_d_png_001" name="gate_image_d_png_001">
+      <init_from>gate_image_d.png.001.png</init_from>
+    </image>
+    <image id="gate_image_l_png" name="gate_image_l_png">
+      <init_from>gate_image_l.png</init_from>
+    </image>
+    <image id="gate_image_l_png_001" name="gate_image_l_png_001">
+      <init_from>gate_image_l.png.001.png</init_from>
+    </image>
+    <image id="gate_image_r_png" name="gate_image_r_png">
+      <init_from>gate_image_r.png</init_from>
+    </image>
+    <image id="gate_image_r_png_001" name="gate_image_r_png_001">
+      <init_from>gate_image_r.png.001.png</init_from>
+    </image>
+    <image id="gate_image_u_png" name="gate_image_u_png">
+      <init_from>gate_image_u.png</init_from>
+    </image>
+    <image id="gate_image_u_png_001" name="gate_image_u_png_001">
+      <init_from>gate_image_u.png.001.png</init_from>
+    </image>
+  </library_images>
+  <library_materials>
+    <material id="gate_image_d-material" name="gate_image_d">
+      <instance_effect url="#gate_image_d-effect"/>
+    </material>
+    <material id="gate_image_r-material" name="gate_image_r">
+      <instance_effect url="#gate_image_r-effect"/>
+    </material>
+    <material id="gate_image_u-material" name="gate_image_u">
+      <instance_effect url="#gate_image_u-effect"/>
+    </material>
+    <material id="gate_image_l-material" name="gate_image_l">
+      <instance_effect url="#gate_image_l-effect"/>
+    </material>
+    <material id="Steel_-_Satin-material" name="Steel_-_Satin">
+      <instance_effect url="#Steel_-_Satin-effect"/>
+    </material>
+    <material id="gate_image_u_001-material" name="gate_image_u.001">
+      <instance_effect url="#gate_image_u_001-effect"/>
+    </material>
+    <material id="gate_image_r_001-material" name="gate_image_r.001">
+      <instance_effect url="#gate_image_r_001-effect"/>
+    </material>
+    <material id="gate_image_l_001-material" name="gate_image_l.001">
+      <instance_effect url="#gate_image_l_001-effect"/>
+    </material>
+    <material id="gate_image_d_001-material" name="gate_image_d.001">
+      <instance_effect url="#gate_image_d_001-effect"/>
+    </material>
+  </library_materials>
+  <library_geometries>
+    <geometry id="gate_image_d-mesh" name="gate_image_d">
+      <mesh>
+        <source id="gate_image_d-mesh-positions">
+          <float_array id="gate_image_d-mesh-positions-array" count="12">-4.965116 -0.5 0 4.965116 -0.5 0 -4.965116 0.5 0 4.965116 0.5 0</float_array>
+          <technique_common>
+            <accessor source="#gate_image_d-mesh-positions-array" count="4" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="gate_image_d-mesh-normals">
+          <float_array id="gate_image_d-mesh-normals-array" count="3">0 0 1</float_array>
+          <technique_common>
+            <accessor source="#gate_image_d-mesh-normals-array" count="1" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="gate_image_d-mesh-map-0">
+          <float_array id="gate_image_d-mesh-map-0-array" count="12">1 0 0 1 0 0 1 0 1 1 0 1</float_array>
+          <technique_common>
+            <accessor source="#gate_image_d-mesh-map-0-array" count="6" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="gate_image_d-mesh-vertices">
+          <input semantic="POSITION" source="#gate_image_d-mesh-positions"/>
+        </vertices>
+        <triangles material="gate_image_d-material" count="2">
+          <input semantic="VERTEX" source="#gate_image_d-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#gate_image_d-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#gate_image_d-mesh-map-0" offset="2" set="0"/>
+          <p>1 0 0 2 0 1 0 0 2 1 0 3 3 0 4 2 0 5</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="gate_image_r-mesh" name="gate_image_r">
+      <mesh>
+        <source id="gate_image_r-mesh-positions">
+          <float_array id="gate_image_r-mesh-positions-array" count="12">-0.05035126 -0.5 0 0.05035126 -0.5 0 -0.05035126 0.5 0 0.05035126 0.5 0</float_array>
+          <technique_common>
+            <accessor source="#gate_image_r-mesh-positions-array" count="4" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="gate_image_r-mesh-normals">
+          <float_array id="gate_image_r-mesh-normals-array" count="3">0 0 1</float_array>
+          <technique_common>
+            <accessor source="#gate_image_r-mesh-normals-array" count="1" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="gate_image_r-mesh-map-0">
+          <float_array id="gate_image_r-mesh-map-0-array" count="12">1 0 0 1 0 0 1 0 1 1 0 1</float_array>
+          <technique_common>
+            <accessor source="#gate_image_r-mesh-map-0-array" count="6" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="gate_image_r-mesh-vertices">
+          <input semantic="POSITION" source="#gate_image_r-mesh-positions"/>
+        </vertices>
+        <triangles material="gate_image_r-material" count="2">
+          <input semantic="VERTEX" source="#gate_image_r-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#gate_image_r-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#gate_image_r-mesh-map-0" offset="2" set="0"/>
+          <p>1 0 0 2 0 1 0 0 2 1 0 3 3 0 4 2 0 5</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="gate_image_u-mesh" name="gate_image_u">
+      <mesh>
+        <source id="gate_image_u-mesh-positions">
+          <float_array id="gate_image_u-mesh-positions-array" count="12">-4.965116 -0.5 0 4.965116 -0.5 0 -4.965116 0.5 0 4.965116 0.5 0</float_array>
+          <technique_common>
+            <accessor source="#gate_image_u-mesh-positions-array" count="4" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="gate_image_u-mesh-normals">
+          <float_array id="gate_image_u-mesh-normals-array" count="3">0 0 1</float_array>
+          <technique_common>
+            <accessor source="#gate_image_u-mesh-normals-array" count="1" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="gate_image_u-mesh-map-0">
+          <float_array id="gate_image_u-mesh-map-0-array" count="12">1 0 0 1 0 0 1 0 1 1 0 1</float_array>
+          <technique_common>
+            <accessor source="#gate_image_u-mesh-map-0-array" count="6" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="gate_image_u-mesh-vertices">
+          <input semantic="POSITION" source="#gate_image_u-mesh-positions"/>
+        </vertices>
+        <triangles material="gate_image_u-material" count="2">
+          <input semantic="VERTEX" source="#gate_image_u-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#gate_image_u-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#gate_image_u-mesh-map-0" offset="2" set="0"/>
+          <p>1 0 0 2 0 1 0 0 2 1 0 3 3 0 4 2 0 5</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="gate_image_l-mesh" name="gate_image_l">
+      <mesh>
+        <source id="gate_image_l-mesh-positions">
+          <float_array id="gate_image_l-mesh-positions-array" count="12">-0.05035126 -0.5 0 0.05035126 -0.5 0 -0.05035126 0.5 0 0.05035126 0.5 0</float_array>
+          <technique_common>
+            <accessor source="#gate_image_l-mesh-positions-array" count="4" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="gate_image_l-mesh-normals">
+          <float_array id="gate_image_l-mesh-normals-array" count="3">0 0 1</float_array>
+          <technique_common>
+            <accessor source="#gate_image_l-mesh-normals-array" count="1" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="gate_image_l-mesh-map-0">
+          <float_array id="gate_image_l-mesh-map-0-array" count="12">1 0 0 1 0 0 1 0 1 1 0 1</float_array>
+          <technique_common>
+            <accessor source="#gate_image_l-mesh-map-0-array" count="6" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="gate_image_l-mesh-vertices">
+          <input semantic="POSITION" source="#gate_image_l-mesh-positions"/>
+        </vertices>
+        <triangles material="gate_image_l-material" count="2">
+          <input semantic="VERTEX" source="#gate_image_l-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#gate_image_l-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#gate_image_l-mesh-map-0" offset="2" set="0"/>
+          <p>1 0 0 2 0 1 0 0 2 1 0 3 3 0 4 2 0 5</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="gate1-mesh" name="gate1">
+      <mesh>
+        <source id="gate1-mesh-positions">
+          <float_array id="gate1-mesh-positions-array" count="336">62.5 -2.5 21.5 -62.5 -2.5 21.5 -62.5 -2.5 146.5 62.5 -2.5 146.5 79 -2.5 5 79 -2.5 163 -79 -2.5 163 -79 -2.5 5 -62.5 2.5 21.5 -62.5 2.5 146.5 62.5 2.5 146.5 62.5 2.5 21.5 79 2.5 163 -79 2.5 163 -79 2.5 5 79 2.5 5 76.5 57.5 2.5 76.58518 57.5 3.147048 76.83494 57.5 3.75 77.23223 57.5 4.267767 77.75 57.5 4.665064 78.35295 57.5 4.914815 79 57.5 5 79.64705 57.5 4.914815 80.25 57.5 4.665064 80.76777 57.5 4.267767 81.16506 57.5 3.75 81.41482 57.5 3.147048 81.5 57.5 2.5 81.41482 57.5 1.852952 81.16506 57.5 1.25 80.76777 57.5 0.732233 80.25 57.5 0.334936 79.64705 57.5 0.08518499 79 57.5 0 78.35295 57.5 0.08518499 77.75 57.5 0.334936 77.23223 57.5 0.732233 76.83494 57.5 1.25 76.58518 57.5 1.852952 76.5 -62.5 2.5 76.58518 -62.5 3.147048 76.83494 -62.5 3.75 77.23223 -62.5 4.267767 77.75 -62.5 4.665064 78.35295 -62.5 4.914815 79 -62.5 5 79.64705 -62.5 4.914815 80.25 -62.5 4.665064 80.76777 -62.5 4.267767 81.16506 -62.5 3.75 81.41482 -62.5 3.147048 81.5 -62.5 2.5 81.41482 -62.5 1.852952 81.16506 -62.5 1.25 80.76777 -62.5 0.732233 80.25 -62.5 0.334936 79.64705 -62.5 0.08518499 79 -62.5 0 78.35295 -62.5 0.08518499 77.75 -62.5 0.334936 77.23223 -62.5 0.732233 76.83494 -62.5 1.25 76.58518 -62.5 1.852952 -81.5 57.5 2.5 -81.41482 57.5 3.147048 -81.16506 57.5 3.75 -80.76777 57.5 4.267767 -80.25 57.5 4.665064 -79.64705 57.5 4.914815 -79 57.5 5 -78.35295 57.5 4.914815 -77.75 57.5 4.665064 -77.23223 57.5 4.267767 -76.83494 57.5 3.75 -76.58518 57.5 3.147048 -76.5 57.5 2.5 -76.58518 57.5 1.852952 -76.83494 57.5 1.25 -77.23223 57.5 0.732233 -77.75 57.5 0.334936 -78.35295 57.5 0.08518499 -79 57.5 0 -79.64705 57.5 0.08518499 -80.25 57.5 0.334936 -80.76777 57.5 0.732233 -81.16506 57.5 1.25 -81.41482 57.5 1.852952 -81.5 -62.5 2.5 -81.41482 -62.5 3.147048 -81.16506 -62.5 3.75 -80.76777 -62.5 4.267767 -80.25 -62.5 4.665064 -79.64705 -62.5 4.914815 -79 -62.5 5 -78.35295 -62.5 4.914815 -77.75 -62.5 4.665064 -77.23223 -62.5 4.267767 -76.83494 -62.5 3.75 -76.58518 -62.5 3.147048 -76.5 -62.5 2.5 -76.58518 -62.5 1.852952 -76.83494 -62.5 1.25 -77.23223 -62.5 0.732233 -77.75 -62.5 0.334936 -78.35295 -62.5 0.08518499 -79 -62.5 0 -79.64705 -62.5 0.08518499 -80.25 -62.5 0.334936 -80.76777 -62.5 0.732233 -81.16506 -62.5 1.25 -81.41482 -62.5 1.852952</float_array>
+          <technique_common>
+            <accessor source="#gate1-mesh-positions-array" count="112" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="gate1-mesh-normals">
+          <float_array id="gate1-mesh-normals-array" count="516">0 -1 0 1 0 0 0 0 -1 -1 0 0 0 0 1 0 1 0 0 1 2.35822e-6 0 1 -2.44139e-6 0 1 1.36118e-5 0 1 8.33549e-6 0 1 -7.68129e-6 0 1 -1.36118e-5 0 1 -8.33549e-6 0 1 7.68129e-6 -0.9659219 -6.2659e-6 -0.2588335 -0.9659219 2.79181e-6 -0.2588335 -1 9.07366e-6 -2.29478e-5 -1 -2.79077e-6 -2.29329e-5 -0.9659219 -9.07697e-6 -0.2588335 -1 6.26362e-6 -2.29478e-5 -1 -6.26362e-6 2.29478e-5 -1 2.79077e-6 2.29329e-5 -0.9659219 9.07697e-6 0.2588335 -0.9659219 -2.79181e-6 0.2588335 -1 -9.07366e-6 2.29478e-5 -0.9659219 6.2659e-6 0.2588335 -0.9659293 -6.2659e-6 0.2588065 -0.9659293 2.7935e-6 0.2588065 -0.8660359 9.07366e-6 0.4999819 -0.8660359 -2.79245e-6 0.4999819 -0.9659293 -9.07697e-6 0.2588065 -0.8660359 6.26362e-6 0.4999819 -0.8660374 -6.2659e-6 0.4999791 -0.8660376 2.78954e-6 0.4999792 -0.7070956 -4.72897e-5 0.707118 -0.7070956 -2.78954e-6 0.707118 -0.8660374 6.60889e-5 0.4999792 -0.7070956 6.2659e-6 0.707118 -0.7071202 -6.2659e-6 0.7070934 -0.7071202 2.79374e-6 0.7070935 -0.4999819 9.07697e-6 0.866036 -0.4999818 -2.79374e-6 0.866036 -0.7071202 -9.07697e-6 0.7070934 -0.4999819 6.2659e-6 0.866036 -0.5000176 -6.2659e-6 0.8660152 -0.5000177 2.79065e-6 0.8660153 -0.2588001 9.07697e-6 0.9659309 -0.2588001 -2.79065e-6 0.9659309 -0.5000176 -9.07697e-6 0.8660152 -0.2588001 6.2659e-6 0.9659309 -0.2588386 -6.2659e-6 0.9659207 -0.2588385 2.79327e-6 0.9659206 1.97142e-5 9.07696e-6 1 2.13087e-5 -2.79327e-6 1 -0.2588371 -9.07697e-6 0.965921 2.13087e-5 6.2659e-6 1 -2.13087e-5 -6.2659e-6 1 -2.13087e-5 2.79327e-6 1 0.2588371 9.07697e-6 0.965921 0.2588385 -2.79327e-6 0.9659206 -1.97142e-5 -9.07696e-6 1 0.2588386 6.2659e-6 0.9659207 0.2588001 -6.2659e-6 0.9659309 0.2588001 2.79065e-6 0.9659309 0.5000176 9.07697e-6 0.8660152 0.5000177 -2.79065e-6 0.8660153 0.2588001 -9.07697e-6 0.9659309 0.5000176 6.2659e-6 0.8660152 0.4999819 -6.2659e-6 0.866036 0.4999818 2.79374e-6 0.866036 0.7071202 9.07697e-6 0.7070934 0.7071202 -2.79374e-6 0.7070935 0.4999819 -9.07697e-6 0.866036 0.7071202 6.2659e-6 0.7070934 0.7070956 -6.2659e-6 0.707118 0.7070956 2.78954e-6 0.707118 0.8660374 -6.60889e-5 0.4999792 0.8660376 -2.78954e-6 0.4999792 0.7070956 4.72897e-5 0.707118 0.8660374 6.2659e-6 0.4999791 0.8660359 -6.26362e-6 0.4999819 0.8660359 2.79245e-6 0.4999819 0.9659293 9.07697e-6 0.2588065 0.9659293 -2.7935e-6 0.2588065 0.8660359 -9.07366e-6 0.4999819 0.9659293 6.2659e-6 0.2588065 0.9659219 -6.2659e-6 0.2588335 0.9659219 2.79181e-6 0.2588335 1 9.07366e-6 2.29478e-5 1 -2.79077e-6 2.29329e-5 0.9659219 -9.07697e-6 0.2588335 1 6.26362e-6 2.29478e-5 1 -6.26362e-6 -2.29478e-5 1 2.79077e-6 -2.29329e-5 0.9659219 9.07697e-6 -0.2588335 0.9659219 -2.79181e-6 -0.2588335 1 -9.07366e-6 -2.29478e-5 0.9659219 6.2659e-6 -0.2588335 0.9659293 -6.2659e-6 -0.2588065 0.9659293 2.7935e-6 -0.2588065 0.8660359 9.07366e-6 -0.4999819 0.8660359 -2.79245e-6 -0.4999819 0.9659293 -9.07697e-6 -0.2588065 0.8660359 6.26362e-6 -0.4999819 0.8660376 -6.2659e-6 -0.4999791 0.8660376 2.7896e-6 -0.4999791 0.7070957 -4.72897e-5 -0.7071179 0.7070957 -2.7896e-6 -0.7071179 0.8660376 -9.07697e-6 -0.499979 0.7070957 6.2659e-6 -0.7071179 0.7071201 -6.2659e-6 -0.7070935 0.7071201 2.79379e-6 -0.7070935 0.4999817 9.07697e-6 -0.8660361 0.4999817 -2.79379e-6 -0.8660361 0.70712 -9.07697e-6 -0.7070935 0.4999817 6.2659e-6 -0.8660361 0.500018 -6.2659e-6 -0.8660151 0.500018 2.79053e-6 -0.8660151 0.2588004 9.07697e-6 -0.9659309 0.2588004 -2.79053e-6 -0.9659309 0.500018 -9.07697e-6 -0.8660151 0.2588004 6.2659e-6 -0.9659309 0.2588374 -6.2659e-6 -0.9659209 0.2588375 2.79327e-6 -0.9659209 -2.09063e-5 9.07697e-6 -1 -2.09063e-5 -2.79327e-6 -1 0.2588375 -9.07697e-6 -0.9659209 -2.08914e-5 6.2659e-6 -1 2.08914e-5 -6.2659e-6 -1 2.09063e-5 2.79327e-6 -1 -0.2588375 9.07697e-6 -0.9659209 -0.2588375 -2.79327e-6 -0.9659209 2.09063e-5 -9.07697e-6 -1 -0.2588374 6.2659e-6 -0.9659209 -0.2588004 -6.2659e-6 -0.9659309 -0.2588004 2.79053e-6 -0.9659309 -0.500018 9.07697e-6 -0.8660151 -0.500018 -2.79053e-6 -0.8660151 -0.2588004 -9.07697e-6 -0.9659309 -0.500018 6.2659e-6 -0.8660151 -0.4999817 -6.2659e-6 -0.8660361 -0.4999817 2.79379e-6 -0.8660361 -0.70712 9.07697e-6 -0.7070935 -0.7071201 -2.79379e-6 -0.7070935 -0.4999817 -9.07697e-6 -0.8660361 -0.7071201 6.2659e-6 -0.7070935 -0.7070957 -6.2659e-6 -0.7071179 -0.7070957 2.7896e-6 -0.7071179 -0.8660376 9.07697e-6 -0.499979 -0.8660376 -2.7896e-6 -0.4999791 -0.7070957 4.72897e-5 -0.7071179 -0.8660376 6.2659e-6 -0.4999791 -0.8660359 -6.26362e-6 -0.4999819 -0.8660359 2.79245e-6 -0.4999819 -0.9659293 9.07697e-6 -0.2588065 -0.9659293 -2.7935e-6 -0.2588065 -0.8660359 -9.07366e-6 -0.4999819 -0.9659293 6.2659e-6 -0.2588065 0 -1 2.35822e-6 0 -1 -2.44139e-6 0 -1 1.36118e-5 0 -1 8.33549e-6 0 -1 -7.68129e-6 0 -1 -1.36118e-5 0 -1 -8.33545e-6 0 -1 7.68132e-6 0 1 1.36118e-5 0 1 8.33545e-6 0 1 -7.68132e-6 0 -1 -1.36118e-5 0 -1 -8.33549e-6 0 -1 7.68129e-6</float_array>
+          <technique_common>
+            <accessor source="#gate1-mesh-normals-array" count="172" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="gate1-mesh-map-0">
+          <float_array id="gate1-mesh-map-0-array" count="1296">6.25 -6.25 7.9 -7.9 6.25 6.25 6.25 6.25 7.9 -7.9 7.9 7.9 6.25 6.25 7.9 7.9 -7.9 7.9 6.25 -6.25 -6.25 -6.25 7.9 -7.9 7.9 -7.9 -6.25 -6.25 -7.9 -7.9 -7.9 -7.9 -6.25 -6.25 -6.25 6.25 -7.9 -7.9 -6.25 6.25 -7.9 7.9 -7.9 7.9 -6.25 6.25 6.25 6.25 12.5 0.25 0 0.25 12.5 -0.25 12.5 -0.25 0 0.25 0 -0.25 12.5 0.25 0 0.25 12.5 -0.25 12.5 -0.25 0 0.25 0 -0.25 12.5 0.25 0 0.25 12.5 -0.25 12.5 -0.25 0 0.25 0 -0.25 12.5 0.25 0 0.25 12.5 -0.25 12.5 -0.25 0 0.25 0 -0.25 15.8 0.25 0 0.25 15.8 -0.25 15.8 -0.25 0 0.25 0 -0.25 15.8 0.25 0 0.25 15.8 -0.25 15.8 -0.25 0 0.25 0 -0.25 15.8 0.25 0 0.25 15.8 -0.25 15.8 -0.25 0 0.25 0 -0.25 15.8 0.25 0 0.25 15.8 -0.25 15.8 -0.25 0 0.25 0 -0.25 -6.25 6.25 -7.9 -7.9 -6.25 -6.25 -6.25 -6.25 -7.9 -7.9 7.9 -7.9 -6.25 -6.25 7.9 -7.9 6.25 -6.25 6.25 -6.25 7.9 -7.9 6.25 6.25 6.25 6.25 7.9 -7.9 7.9 7.9 6.25 6.25 7.9 7.9 -7.9 7.9 -7.9 -7.9 -6.25 6.25 -7.9 7.9 -7.9 7.9 -6.25 6.25 6.25 6.25 0.241481 0.06470495 -0.241481 0.06470495 0.25 0 0.25 0 -0.241481 0.06470495 -0.25 0 0.25 0 -0.25 0 0.241481 -0.06470495 0.241481 -0.06470495 -0.25 0 -0.241481 -0.06470495 0.241481 -0.06470495 -0.241481 -0.06470495 0.216506 -0.125 0.216506 -0.125 -0.241481 -0.06470495 -0.216506 -0.125 0.216506 -0.125 -0.216506 -0.125 0.176777 -0.176777 0.176777 -0.176777 -0.216506 -0.125 -0.176777 -0.176777 0.176777 -0.176777 -0.176777 -0.176777 0.125 -0.216506 0.125 -0.216506 -0.176777 -0.176777 -0.125 -0.216506 0.125 -0.216506 -0.125 -0.216506 0.06470495 -0.241481 0.06470495 -0.241481 -0.125 -0.216506 -0.06470495 -0.241481 0.06470495 -0.241481 -0.06470495 -0.241481 0 -0.25 -0.241481 0.06470495 0.241481 0.06470495 -0.216506 0.125 -0.216506 0.125 0.241481 0.06470495 0.216506 0.125 -0.216506 0.125 0.216506 0.125 -0.176777 0.176777 -0.176777 0.176777 0.216506 0.125 0.176777 0.176777 -0.176777 0.176777 0.176777 0.176777 -0.125 0.216506 -0.125 0.216506 0.176777 0.176777 0.125 0.216506 -0.125 0.216506 0.125 0.216506 -0.06470495 0.241481 -0.06470495 0.241481 0.125 0.216506 0.06470495 0.241481 -0.06470495 0.241481 0.06470495 0.241481 0 0.25 6 -0.719948 -6 -0.719948 6 -0.785398 6 -0.785398 -6 -0.719948 -6 -0.785398 6 0.785398 -6 0.785398 6 0.719948 6 0.719948 -6 0.785398 -6 0.719948 6 0.719948 -6 0.719948 6 0.654498 6 0.654498 -6 0.719948 -6 0.654498 6 0.654498 -6 0.654498 6 0.589049 6 0.589049 -6 0.654498 -6 0.589049 6 0.589049 -6 0.589049 6 0.523599 6 0.523599 -6 0.589049 -6 0.523599 6 0.523599 -6 0.523599 6 0.458149 6 0.458149 -6 0.523599 -6 0.458149 6 0.458149 -6 0.458149 6 0.392699 6 0.392699 -6 0.458149 -6 0.392699 6 0.392699 -6 0.392699 6 0.327249 6 0.327249 -6 0.392699 -6 0.327249 6 0.327249 -6 0.327249 6 0.261799 6 0.261799 -6 0.327249 -6 0.261799 6 0.261799 -6 0.261799 6 0.19635 6 0.19635 -6 0.261799 -6 0.19635 6 0.19635 -6 0.19635 6 0.1309 6 0.1309 -6 0.19635 -6 0.1309 6 0.1309 -6 0.1309 6 0.06544995 6 0.06544995 -6 0.1309 -6 0.06544995 6 0.06544995 -6 0.06544995 6 0 6 0 -6 0.06544995 -6 0 6 0 -6 0 6 -0.06544995 6 -0.06544995 -6 0 -6 -0.06544995 6 -0.06544995 -6 -0.06544995 6 -0.1309 6 -0.1309 -6 -0.06544995 -6 -0.1309 6 -0.1309 -6 -0.1309 6 -0.19635 6 -0.19635 -6 -0.1309 -6 -0.19635 6 -0.19635 -6 -0.19635 6 -0.261799 6 -0.261799 -6 -0.19635 -6 -0.261799 6 -0.261799 -6 -0.261799 6 -0.327249 6 -0.327249 -6 -0.261799 -6 -0.327249 6 -0.327249 -6 -0.327249 6 -0.392699 6 -0.392699 -6 -0.327249 -6 -0.392699 6 -0.392699 -6 -0.392699 6 -0.458149 6 -0.458149 -6 -0.392699 -6 -0.458149 6 -0.458149 -6 -0.458149 6 -0.523599 6 -0.523599 -6 -0.458149 -6 -0.523599 6 -0.523599 -6 -0.523599 6 -0.589049 6 -0.589049 -6 -0.523599 -6 -0.589049 6 -0.589049 -6 -0.589049 6 -0.654498 6 -0.654498 -6 -0.589049 -6 -0.654498 6 -0.654498 -6 -0.654498 6 -0.719948 6 -0.719948 -6 -0.654498 -6 -0.719948 -0.241481 -0.06470495 0.241481 -0.06470495 -0.25 0 -0.25 0 0.241481 -0.06470495 0.25 0 -0.25 0 0.25 0 -0.241481 0.06470495 -0.241481 0.06470495 0.25 0 0.241481 0.06470495 -0.241481 0.06470495 0.241481 0.06470495 -0.216506 0.125 -0.216506 0.125 0.241481 0.06470495 0.216506 0.125 -0.216506 0.125 0.216506 0.125 -0.176777 0.176777 -0.176777 0.176777 0.216506 0.125 0.176777 0.176777 -0.176777 0.176777 0.176777 0.176777 -0.125 0.216506 -0.125 0.216506 0.176777 0.176777 0.125 0.216506 -0.125 0.216506 0.125 0.216506 -0.06470495 0.241481 -0.06470495 0.241481 0.125 0.216506 0.06470495 0.241481 -0.06470495 0.241481 0.06470495 0.241481 0 0.25 0.241481 -0.06470495 -0.241481 -0.06470495 0.216506 -0.125 0.216506 -0.125 -0.241481 -0.06470495 -0.216506 -0.125 0.216506 -0.125 -0.216506 -0.125 0.176777 -0.176777 0.176777 -0.176777 -0.216506 -0.125 -0.176777 -0.176777 0.176777 -0.176777 -0.176777 -0.176777 0.125 -0.216506 0.125 -0.216506 -0.176777 -0.176777 -0.125 -0.216506 0.125 -0.216506 -0.125 -0.216506 0.06470495 -0.241481 0.06470495 -0.241481 -0.125 -0.216506 -0.06470495 -0.241481 0.06470495 -0.241481 -0.06470495 -0.241481 0 -0.25 0.241481 0.06470495 -0.241481 0.06470495 0.25 0 0.25 0 -0.241481 0.06470495 -0.25 0 0.25 0 -0.25 0 0.241481 -0.06470495 0.241481 -0.06470495 -0.25 0 -0.241481 -0.06470495 0.241481 -0.06470495 -0.241481 -0.06470495 0.216506 -0.125 0.216506 -0.125 -0.241481 -0.06470495 -0.216506 -0.125 0.216506 -0.125 -0.216506 -0.125 0.176777 -0.176777 0.176777 -0.176777 -0.216506 -0.125 -0.176777 -0.176777 0.176777 -0.176777 -0.176777 -0.176777 0.125 -0.216506 0.125 -0.216506 -0.176777 -0.176777 -0.125 -0.216506 0.125 -0.216506 -0.125 -0.216506 0.06470495 -0.241481 0.06470495 -0.241481 -0.125 -0.216506 -0.06470495 -0.241481 0.06470495 -0.241481 -0.06470495 -0.241481 0 -0.25 -0.241481 0.06470495 0.241481 0.06470495 -0.216506 0.125 -0.216506 0.125 0.241481 0.06470495 0.216506 0.125 -0.216506 0.125 0.216506 0.125 -0.176777 0.176777 -0.176777 0.176777 0.216506 0.125 0.176777 0.176777 -0.176777 0.176777 0.176777 0.176777 -0.125 0.216506 -0.125 0.216506 0.176777 0.176777 0.125 0.216506 -0.125 0.216506 0.125 0.216506 -0.06470495 0.241481 -0.06470495 0.241481 0.125 0.216506 0.06470495 0.241481 -0.06470495 0.241481 0.06470495 0.241481 0 0.25 6 -0.719948 -6 -0.719948 6 -0.785398 6 -0.785398 -6 -0.719948 -6 -0.785398 6 0.785398 -6 0.785398 6 0.719948 6 0.719948 -6 0.785398 -6 0.719948 6 0.719948 -6 0.719948 6 0.654498 6 0.654498 -6 0.719948 -6 0.654498 6 0.654498 -6 0.654498 6 0.589049 6 0.589049 -6 0.654498 -6 0.589049 6 0.589049 -6 0.589049 6 0.523599 6 0.523599 -6 0.589049 -6 0.523599 6 0.523599 -6 0.523599 6 0.458149 6 0.458149 -6 0.523599 -6 0.458149 6 0.458149 -6 0.458149 6 0.392699 6 0.392699 -6 0.458149 -6 0.392699 6 0.392699 -6 0.392699 6 0.327249 6 0.327249 -6 0.392699 -6 0.327249 6 0.327249 -6 0.327249 6 0.261799 6 0.261799 -6 0.327249 -6 0.261799 6 0.261799 -6 0.261799 6 0.19635 6 0.19635 -6 0.261799 -6 0.19635 6 0.19635 -6 0.19635 6 0.1309 6 0.1309 -6 0.19635 -6 0.1309 6 0.1309 -6 0.1309 6 0.06544995 6 0.06544995 -6 0.1309 -6 0.06544995 6 0.06544995 -6 0.06544995 6 0 6 0 -6 0.06544995 -6 0 6 0 -6 0 6 -0.06544995 6 -0.06544995 -6 0 -6 -0.06544995 6 -0.06544995 -6 -0.06544995 6 -0.1309 6 -0.1309 -6 -0.06544995 -6 -0.1309 6 -0.1309 -6 -0.1309 6 -0.19635 6 -0.19635 -6 -0.1309 -6 -0.19635 6 -0.19635 -6 -0.19635 6 -0.261799 6 -0.261799 -6 -0.19635 -6 -0.261799 6 -0.261799 -6 -0.261799 6 -0.327249 6 -0.327249 -6 -0.261799 -6 -0.327249 6 -0.327249 -6 -0.327249 6 -0.392699 6 -0.392699 -6 -0.327249 -6 -0.392699 6 -0.392699 -6 -0.392699 6 -0.458149 6 -0.458149 -6 -0.392699 -6 -0.458149 6 -0.458149 -6 -0.458149 6 -0.523599 6 -0.523599 -6 -0.458149 -6 -0.523599 6 -0.523599 -6 -0.523599 6 -0.589049 6 -0.589049 -6 -0.523599 -6 -0.589049 6 -0.589049 -6 -0.589049 6 -0.654498 6 -0.654498 -6 -0.589049 -6 -0.654498 6 -0.654498 -6 -0.654498 6 -0.719948 6 -0.719948 -6 -0.654498 -6 -0.719948 -0.241481 -0.06470495 0.241481 -0.06470495 -0.25 0 -0.25 0 0.241481 -0.06470495 0.25 0 -0.25 0 0.25 0 -0.241481 0.06470495 -0.241481 0.06470495 0.25 0 0.241481 0.06470495 -0.241481 0.06470495 0.241481 0.06470495 -0.216506 0.125 -0.216506 0.125 0.241481 0.06470495 0.216506 0.125 -0.216506 0.125 0.216506 0.125 -0.176777 0.176777 -0.176777 0.176777 0.216506 0.125 0.176777 0.176777 -0.176777 0.176777 0.176777 0.176777 -0.125 0.216506 -0.125 0.216506 0.176777 0.176777 0.125 0.216506 -0.125 0.216506 0.125 0.216506 -0.06470495 0.241481 -0.06470495 0.241481 0.125 0.216506 0.06470495 0.241481 -0.06470495 0.241481 0.06470495 0.241481 0 0.25 0.241481 -0.06470495 -0.241481 -0.06470495 0.216506 -0.125 0.216506 -0.125 -0.241481 -0.06470495 -0.216506 -0.125 0.216506 -0.125 -0.216506 -0.125 0.176777 -0.176777 0.176777 -0.176777 -0.216506 -0.125 -0.176777 -0.176777 0.176777 -0.176777 -0.176777 -0.176777 0.125 -0.216506 0.125 -0.216506 -0.176777 -0.176777 -0.125 -0.216506 0.125 -0.216506 -0.125 -0.216506 0.06470495 -0.241481 0.06470495 -0.241481 -0.125 -0.216506 -0.06470495 -0.241481 0.06470495 -0.241481 -0.06470495 -0.241481 0 -0.25</float_array>
+          <technique_common>
+            <accessor source="#gate1-mesh-map-0-array" count="648" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="gate1-mesh-vertices">
+          <input semantic="POSITION" source="#gate1-mesh-positions"/>
+        </vertices>
+        <triangles material="Steel_-_Satin-material" count="216">
+          <input semantic="VERTEX" source="#gate1-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#gate1-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#gate1-mesh-map-0" offset="2" set="0"/>
+          <p>1 0 0 7 0 1 0 0 2 0 0 3 7 0 4 4 0 5 0 0 6 4 0 7 5 0 8 1 0 9 2 0 10 7 0 11 7 0 12 2 0 13 6 0 14 6 0 15 2 0 16 3 0 17 6 0 18 3 0 19 5 0 20 5 0 21 3 0 22 0 0 23 8 1 24 9 1 25 1 1 26 1 1 27 9 1 28 2 1 29 9 2 30 10 2 31 2 2 32 2 2 33 10 2 34 3 2 35 10 3 36 11 3 37 3 3 38 3 3 39 11 3 40 0 3 41 11 4 42 8 4 43 0 4 44 0 4 45 8 4 46 1 4 47 12 4 48 13 4 49 5 4 50 5 4 51 13 4 52 6 4 53 13 3 54 14 3 55 6 3 56 6 3 57 14 3 58 7 3 59 14 2 60 15 2 61 7 2 62 7 2 63 15 2 64 4 2 65 15 1 66 12 1 67 4 1 68 4 1 69 12 1 70 5 1 71 11 5 72 14 5 73 8 5 74 8 5 75 14 5 76 13 5 77 8 5 78 13 5 79 9 5 80 9 5 81 13 5 82 10 5 83 10 5 84 13 5 85 12 5 86 10 5 87 12 5 88 15 5 89 14 5 90 11 5 91 15 5 92 15 5 93 11 5 94 10 5 95 17 5 96 27 5 97 16 5 98 16 6 99 27 6 100 28 6 101 16 5 102 28 5 103 39 5 104 39 7 105 28 7 106 29 7 107 39 5 108 29 5 109 38 5 110 38 5 111 29 5 112 30 5 113 38 8 114 30 8 115 37 8 116 37 9 117 30 9 118 31 9 119 37 5 120 31 5 121 36 5 122 36 10 123 31 10 124 32 10 125 36 5 126 32 5 127 35 5 128 35 5 129 32 5 130 33 5 131 35 5 132 33 5 133 34 5 134 27 5 135 17 5 136 26 5 137 26 5 138 17 5 139 18 5 140 26 11 141 18 11 142 25 11 143 25 12 144 18 12 145 19 12 146 25 5 147 19 5 148 24 5 149 24 13 150 19 13 151 20 13 152 24 5 153 20 5 154 23 5 155 23 5 156 20 5 157 21 5 158 23 5 159 21 5 160 22 5 161 39 14 162 63 15 163 16 16 164 16 17 165 63 18 166 40 19 167 16 20 168 40 21 169 17 22 170 17 23 171 40 24 172 41 25 173 17 26 174 41 27 175 18 28 176 18 29 177 41 30 178 42 31 179 18 32 180 42 33 181 19 34 182 19 35 183 42 36 184 43 37 185 19 38 186 43 39 187 20 40 188 20 41 189 43 42 190 44 43 191 20 44 192 44 45 193 21 46 194 21 47 195 44 48 196 45 49 197 21 50 198 45 51 199 22 52 200 22 53 201 45 54 202 46 55 203 22 56 204 46 57 205 23 58 206 23 59 207 46 60 208 47 61 209 23 62 210 47 63 211 24 64 212 24 65 213 47 66 214 48 67 215 24 68 216 48 69 217 25 70 218 25 71 219 48 72 220 49 73 221 25 74 222 49 75 223 26 76 224 26 77 225 49 78 226 50 79 227 26 80 228 50 81 229 27 82 230 27 83 231 50 84 232 51 85 233 27 86 234 51 87 235 28 88 236 28 89 237 51 90 238 52 91 239 28 92 240 52 93 241 29 94 242 29 95 243 52 96 244 53 97 245 29 98 246 53 99 247 30 100 248 30 101 249 53 102 250 54 103 251 30 104 252 54 105 253 31 106 254 31 107 255 54 108 256 55 109 257 31 110 258 55 111 259 32 112 260 32 113 261 55 114 262 56 115 263 32 116 264 56 117 265 33 118 266 33 119 267 56 120 268 57 121 269 33 122 270 57 123 271 34 124 272 34 125 273 57 126 274 58 127 275 34 128 276 58 129 277 35 130 278 35 131 279 58 132 280 59 133 281 35 134 282 59 135 283 36 136 284 36 137 285 59 138 286 60 139 287 36 140 288 60 141 289 37 142 290 37 143 291 60 144 292 61 145 293 37 146 294 61 147 295 38 148 296 38 149 297 61 150 298 62 151 299 38 152 300 62 153 301 39 154 302 39 155 303 62 156 304 63 157 305 63 0 306 53 0 307 40 0 308 40 158 309 53 158 310 52 158 311 40 0 312 52 0 313 41 0 314 41 159 315 52 159 316 51 159 317 41 0 318 51 0 319 42 0 320 42 0 321 51 0 322 50 0 323 42 160 324 50 160 325 43 160 326 43 161 327 50 161 328 49 161 329 43 0 330 49 0 331 44 0 332 44 162 333 49 162 334 48 162 335 44 0 336 48 0 337 45 0 338 45 0 339 48 0 340 47 0 341 45 0 342 47 0 343 46 0 344 53 0 345 63 0 346 54 0 347 54 0 348 63 0 349 62 0 350 54 163 351 62 163 352 55 163 353 55 164 354 62 164 355 61 164 356 55 0 357 61 0 358 56 0 359 56 165 360 61 165 361 60 165 362 56 0 363 60 0 364 57 0 365 57 0 366 60 0 367 59 0 368 57 0 369 59 0 370 58 0 371 65 5 372 75 5 373 64 5 374 64 6 375 75 6 376 76 6 377 64 5 378 76 5 379 87 5 380 87 7 381 76 7 382 77 7 383 87 5 384 77 5 385 86 5 386 86 5 387 77 5 388 78 5 389 86 166 390 78 166 391 85 166 392 85 167 393 78 167 394 79 167 395 85 5 396 79 5 397 84 5 398 84 168 399 79 168 400 80 168 401 84 5 402 80 5 403 83 5 404 83 5 405 80 5 406 81 5 407 83 5 408 81 5 409 82 5 410 75 5 411 65 5 412 74 5 413 74 5 414 65 5 415 66 5 416 74 11 417 66 11 418 73 11 419 73 12 420 66 12 421 67 12 422 73 5 423 67 5 424 72 5 425 72 13 426 67 13 427 68 13 428 72 5 429 68 5 430 71 5 431 71 5 432 68 5 433 69 5 434 71 5 435 69 5 436 70 5 437 87 14 438 111 15 439 64 16 440 64 17 441 111 18 442 88 19 443 64 20 444 88 21 445 65 22 446 65 23 447 88 24 448 89 25 449 65 26 450 89 27 451 66 28 452 66 29 453 89 30 454 90 31 455 66 32 456 90 33 457 67 34 458 67 35 459 90 36 460 91 37 461 67 38 462 91 39 463 68 40 464 68 41 465 91 42 466 92 43 467 68 44 468 92 45 469 69 46 470 69 47 471 92 48 472 93 49 473 69 50 474 93 51 475 70 52 476 70 53 477 93 54 478 94 55 479 70 56 480 94 57 481 71 58 482 71 59 483 94 60 484 95 61 485 71 62 486 95 63 487 72 64 488 72 65 489 95 66 490 96 67 491 72 68 492 96 69 493 73 70 494 73 71 495 96 72 496 97 73 497 73 74 498 97 75 499 74 76 500 74 77 501 97 78 502 98 79 503 74 80 504 98 81 505 75 82 506 75 83 507 98 84 508 99 85 509 75 86 510 99 87 511 76 88 512 76 89 513 99 90 514 100 91 515 76 92 516 100 93 517 77 94 518 77 95 519 100 96 520 101 97 521 77 98 522 101 99 523 78 100 524 78 101 525 101 102 526 102 103 527 78 104 528 102 105 529 79 106 530 79 107 531 102 108 532 103 109 533 79 110 534 103 111 535 80 112 536 80 113 537 103 114 538 104 115 539 80 116 540 104 117 541 81 118 542 81 119 543 104 120 544 105 121 545 81 122 546 105 123 547 82 124 548 82 125 549 105 126 550 106 127 551 82 128 552 106 129 553 83 130 554 83 131 555 106 132 556 107 133 557 83 134 558 107 135 559 84 136 560 84 137 561 107 138 562 108 139 563 84 140 564 108 141 565 85 142 566 85 143 567 108 144 568 109 145 569 85 146 570 109 147 571 86 148 572 86 149 573 109 150 574 110 151 575 86 152 576 110 153 577 87 154 578 87 155 579 110 156 580 111 157 581 111 0 582 101 0 583 88 0 584 88 158 585 101 158 586 100 158 587 88 0 588 100 0 589 89 0 590 89 159 591 100 159 592 99 159 593 89 0 594 99 0 595 90 0 596 90 0 597 99 0 598 98 0 599 90 160 600 98 160 601 91 160 602 91 161 603 98 161 604 97 161 605 91 0 606 97 0 607 92 0 608 92 162 609 97 162 610 96 162 611 92 0 612 96 0 613 93 0 614 93 0 615 96 0 616 95 0 617 93 0 618 95 0 619 94 0 620 101 0 621 111 0 622 102 0 623 102 0 624 111 0 625 110 0 626 102 169 627 110 169 628 103 169 629 103 170 630 110 170 631 109 170 632 103 0 633 109 0 634 104 0 635 104 171 636 109 171 637 108 171 638 104 0 639 108 0 640 105 0 641 105 0 642 108 0 643 107 0 644 105 0 645 107 0 646 106 0 647</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="gate_image_u_001-mesh" name="gate_image_u.001">
+      <mesh>
+        <source id="gate_image_u_001-mesh-positions">
+          <float_array id="gate_image_u_001-mesh-positions-array" count="12">-4.965116 -0.5 0 4.965116 -0.5 0 -4.965116 0.5 0 4.965116 0.5 0</float_array>
+          <technique_common>
+            <accessor source="#gate_image_u_001-mesh-positions-array" count="4" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="gate_image_u_001-mesh-normals">
+          <float_array id="gate_image_u_001-mesh-normals-array" count="3">0 0 1</float_array>
+          <technique_common>
+            <accessor source="#gate_image_u_001-mesh-normals-array" count="1" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="gate_image_u_001-mesh-map-0">
+          <float_array id="gate_image_u_001-mesh-map-0-array" count="12">1 0 0 1 0 0 1 0 1 1 0 1</float_array>
+          <technique_common>
+            <accessor source="#gate_image_u_001-mesh-map-0-array" count="6" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="gate_image_u_001-mesh-vertices">
+          <input semantic="POSITION" source="#gate_image_u_001-mesh-positions"/>
+        </vertices>
+        <triangles material="gate_image_u_001-material" count="2">
+          <input semantic="VERTEX" source="#gate_image_u_001-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#gate_image_u_001-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#gate_image_u_001-mesh-map-0" offset="2" set="0"/>
+          <p>1 0 0 2 0 1 0 0 2 1 0 3 3 0 4 2 0 5</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="gate_image_r_001-mesh" name="gate_image_r.001">
+      <mesh>
+        <source id="gate_image_r_001-mesh-positions">
+          <float_array id="gate_image_r_001-mesh-positions-array" count="12">-0.05035126 -0.5 0 0.05035126 -0.5 0 -0.05035126 0.5 0 0.05035126 0.5 0</float_array>
+          <technique_common>
+            <accessor source="#gate_image_r_001-mesh-positions-array" count="4" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="gate_image_r_001-mesh-normals">
+          <float_array id="gate_image_r_001-mesh-normals-array" count="3">0 0 1</float_array>
+          <technique_common>
+            <accessor source="#gate_image_r_001-mesh-normals-array" count="1" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="gate_image_r_001-mesh-map-0">
+          <float_array id="gate_image_r_001-mesh-map-0-array" count="12">1 0 0 1 0 0 1 0 1 1 0 1</float_array>
+          <technique_common>
+            <accessor source="#gate_image_r_001-mesh-map-0-array" count="6" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="gate_image_r_001-mesh-vertices">
+          <input semantic="POSITION" source="#gate_image_r_001-mesh-positions"/>
+        </vertices>
+        <triangles material="gate_image_r_001-material" count="2">
+          <input semantic="VERTEX" source="#gate_image_r_001-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#gate_image_r_001-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#gate_image_r_001-mesh-map-0" offset="2" set="0"/>
+          <p>1 0 0 2 0 1 0 0 2 1 0 3 3 0 4 2 0 5</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="gate_image_l_001-mesh" name="gate_image_l.001">
+      <mesh>
+        <source id="gate_image_l_001-mesh-positions">
+          <float_array id="gate_image_l_001-mesh-positions-array" count="12">-0.05035126 -0.5 0 0.05035126 -0.5 0 -0.05035126 0.5 0 0.05035126 0.5 0</float_array>
+          <technique_common>
+            <accessor source="#gate_image_l_001-mesh-positions-array" count="4" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="gate_image_l_001-mesh-normals">
+          <float_array id="gate_image_l_001-mesh-normals-array" count="3">0 0 1</float_array>
+          <technique_common>
+            <accessor source="#gate_image_l_001-mesh-normals-array" count="1" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="gate_image_l_001-mesh-map-0">
+          <float_array id="gate_image_l_001-mesh-map-0-array" count="12">1 0 0 1 0 0 1 0 1 1 0 1</float_array>
+          <technique_common>
+            <accessor source="#gate_image_l_001-mesh-map-0-array" count="6" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="gate_image_l_001-mesh-vertices">
+          <input semantic="POSITION" source="#gate_image_l_001-mesh-positions"/>
+        </vertices>
+        <triangles material="gate_image_l_001-material" count="2">
+          <input semantic="VERTEX" source="#gate_image_l_001-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#gate_image_l_001-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#gate_image_l_001-mesh-map-0" offset="2" set="0"/>
+          <p>1 0 0 2 0 1 0 0 2 1 0 3 3 0 4 2 0 5</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="gate_image_d_001-mesh" name="gate_image_d.001">
+      <mesh>
+        <source id="gate_image_d_001-mesh-positions">
+          <float_array id="gate_image_d_001-mesh-positions-array" count="12">-4.965116 -0.5 0 4.965116 -0.5 0 -4.965116 0.5 0 4.965116 0.5 0</float_array>
+          <technique_common>
+            <accessor source="#gate_image_d_001-mesh-positions-array" count="4" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="gate_image_d_001-mesh-normals">
+          <float_array id="gate_image_d_001-mesh-normals-array" count="3">0 0 1</float_array>
+          <technique_common>
+            <accessor source="#gate_image_d_001-mesh-normals-array" count="1" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="gate_image_d_001-mesh-map-0">
+          <float_array id="gate_image_d_001-mesh-map-0-array" count="12">1 0 0 1 0 0 1 0 1 1 0 1</float_array>
+          <technique_common>
+            <accessor source="#gate_image_d_001-mesh-map-0-array" count="6" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="gate_image_d_001-mesh-vertices">
+          <input semantic="POSITION" source="#gate_image_d_001-mesh-positions"/>
+        </vertices>
+        <triangles material="gate_image_d_001-material" count="2">
+          <input semantic="VERTEX" source="#gate_image_d_001-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#gate_image_d_001-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#gate_image_d_001-mesh-map-0" offset="2" set="0"/>
+          <p>1 0 0 2 0 1 0 0 2 1 0 3 3 0 4 2 0 5</p>
+        </triangles>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="Scene" name="Scene">
+      <node id="gate_image_d" name="gate_image_d" type="NODE">
+        <matrix sid="transform">0.1585 0 0 -0.002601 0 -6.92825e-9 -1 -0.028 0 0.1585 -4.37114e-8 0.1155058 0 0 0 1</matrix>
+        <instance_geometry url="#gate_image_d-mesh" name="gate_image_d">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="gate_image_d-material" target="#gate_image_d-material">
+                <bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="gate_image_r" name="gate_image_r" type="NODE">
+        <matrix sid="transform">1.61 0 0 0.708929 0 -7.03753e-8 -1 -0.03 0 1.61 -4.37114e-8 0.838491 0 0 0 1</matrix>
+        <instance_geometry url="#gate_image_r-mesh" name="gate_image_r">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="gate_image_r-material" target="#gate_image_r-material">
+                <bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="gate_image_u" name="gate_image_u" type="NODE">
+        <matrix sid="transform">0.1585 0 0 -0.002601 0 -6.92825e-9 -1 -0.028 0 0.1585 -4.37114e-8 1.563879 0 0 0 1</matrix>
+        <instance_geometry url="#gate_image_u-mesh" name="gate_image_u">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="gate_image_u-material" target="#gate_image_u-material">
+                <bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="gate_image_l" name="gate_image_l" type="NODE">
+        <matrix sid="transform">1.61 0 0 -0.708929 0 -7.03753e-8 -1 -0.03 0 1.61 -4.37114e-8 0.838491 0 0 0 1</matrix>
+        <instance_geometry url="#gate_image_l-mesh" name="gate_image_l">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="gate_image_l-material" target="#gate_image_l-material">
+                <bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="gate1" name="gate1" type="NODE">
+        <matrix sid="transform">0.01 0 0 0 0 0.01 0 0 0 0 0.01 0 0 0 0 1</matrix>
+        <instance_geometry url="#gate1-mesh" name="gate1">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="Steel_-_Satin-material" target="#Steel_-_Satin-material">
+                <bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="Camera" name="Camera" type="NODE">
+        <matrix sid="transform">0.6859207 -0.3240135 0.6515582 7.358891 0.7276763 0.3054208 -0.6141704 -6.925791 0 0.8953956 0.4452714 4.958309 0 0 0 1</matrix>
+        <instance_camera url="#Camera-camera"/>
+      </node>
+      <node id="Light" name="Light" type="NODE">
+        <matrix sid="transform">-0.2908646 -0.7711008 0.5663932 4.076245 0.9551712 -0.1998834 0.2183912 1.005454 -0.05518906 0.6045247 0.7946723 5.903862 0 0 0 1</matrix>
+        <instance_light url="#Light-light"/>
+      </node>
+      <node id="gate_image_u_001" name="gate_image_u.001" type="NODE">
+        <matrix sid="transform">-0.1585 -1.04614e-15 -1.50996e-7 -1.35042e-8 -2.39328e-8 6.92825e-9 1 0.02846435 0 0.1585 -4.37114e-8 1.563879 0 0 0 1</matrix>
+        <instance_geometry url="#gate_image_u_001-mesh" name="gate_image_u.001">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="gate_image_u_001-material" target="#gate_image_u_001-material">
+                <bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="gate_image_r_001" name="gate_image_r.001" type="NODE">
+        <matrix sid="transform">-1.61 -1.06264e-14 -1.50996e-7 -0.71153 -2.43103e-7 7.03753e-8 1 0.03046421 0 1.61 -4.37114e-8 0.838491 0 0 0 1</matrix>
+        <instance_geometry url="#gate_image_r_001-mesh" name="gate_image_r.001">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="gate_image_r_001-material" target="#gate_image_r_001-material">
+                <bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="gate_image_l_001" name="gate_image_l.001" type="NODE">
+        <matrix sid="transform">-1.61 -1.06264e-14 -1.50996e-7 0.706328 -2.43103e-7 7.03753e-8 1 0.03046445 0 1.61 -4.37114e-8 0.838491 0 0 0 1</matrix>
+        <instance_geometry url="#gate_image_l_001-mesh" name="gate_image_l.001">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="gate_image_l_001-material" target="#gate_image_l_001-material">
+                <bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="gate_image_d_001" name="gate_image_d.001" type="NODE">
+        <matrix sid="transform">-0.1585 -1.04614e-15 -1.50996e-7 -1.35042e-8 -2.39328e-8 6.92825e-9 1 0.02846435 0 0.1585 -4.37114e-8 0.1155058 0 0 0 1</matrix>
+        <instance_geometry url="#gate_image_d_001-mesh" name="gate_image_d.001">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="gate_image_d_001-material" target="#gate_image_d_001-material">
+                <bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#Scene"/>
+  </scene>
+</COLLADA>

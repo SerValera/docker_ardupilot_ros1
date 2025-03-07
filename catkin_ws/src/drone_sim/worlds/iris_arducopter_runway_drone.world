@@ -1,0 +1,449 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <world name="default">
+    <gui>
+      <camera name="user_camera">
+        <pose>-5 0 1 0 0.2 0</pose>
+      </camera>
+    </gui>
+    <physics type="ode">
+      <ode>
+        <solver>
+          <type>quick</type>
+          <iters>100</iters>
+          <sor>1.0</sor>
+        </solver>
+        <constraints>
+          <cfm>0.0</cfm>
+          <erp>0.2</erp>
+          <contact_max_correcting_vel>0.1</contact_max_correcting_vel>
+          <contact_surface_layer>0.0</contact_surface_layer>
+        </constraints>
+      </ode>
+      <real_time_update_rate>-1</real_time_update_rate>
+      <!-- <max_step_size>0.000025</max_step_size> -->
+    </physics>
+    <gravity>0 0 -9.8</gravity>
+    
+    <light name="sun" type="directional">
+      <cast_shadows>false</cast_shadows>  <!-- Disable shadows -->
+      <pose>0 0 10 0 -0 0</pose>
+      <diffuse>1 1 1 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.9</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <direction>-0.5 0.5 -1</direction>
+    </light>
+
+    <model name='ground_plane'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>100</mu>
+                <mu2>50</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+
+    <!-- Drone for flight -->
+    <model name="iris_demo">
+      <include>
+      
+        <uri>/home/sim/ardupilot_docker/catkin_ws/src/drone_sim/models/iris_camera_copy</uri>
+
+      </include>
+    </model>
+
+    <model name='gate_1'>
+      <static>1</static>
+      <pose frame=''>4 0 0 0 0 1.57</pose>
+      <link name='gate_1'>
+        <visual name='vis_gate'>
+          <geometry>
+            <mesh>
+              <uri>/home/sim/ardupilot_docker/catkin_ws/src/drone_sim/models/irs_gates/skoltech_gate_1.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='col_gate'>
+          <geometry>
+            <mesh>
+              <uri>/home/sim/ardupilot_docker/catkin_ws/src/drone_sim/models/irs_gates/skoltech_gate_1.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+    </link>
+  </model>
+
+
+    <model name='gate_2'>
+      <static>1</static>
+      <pose frame=''>8 4 0 0 0 0</pose>
+      <link name='gate_2'>
+        <visual name='vis_gate'>
+          <geometry>
+            <mesh>
+              <uri>/home/sim/ardupilot_docker/catkin_ws/src/drone_sim/models/irs_gates/skoltech_gate_1.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='col_gate'>
+          <geometry>
+            <mesh>
+              <uri>/home/sim/ardupilot_docker/catkin_ws/src/drone_sim/models/irs_gates/skoltech_gate_1.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+    </link>
+  </model>
+
+      <model name='gate_3'>
+      <static>1</static>
+      <pose frame=''>4 7 0 0 0 1.57</pose>
+      <link name='gate_3'>
+        <visual name='vis_gate'>
+          <geometry>
+            <mesh>
+              <uri>/home/sim/ardupilot_docker/catkin_ws/src/drone_sim/models/irs_gates/skoltech_gate_2.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='col_gate'>
+          <geometry>
+            <mesh>
+              <uri>/home/sim/ardupilot_docker/catkin_ws/src/drone_sim/models/irs_gates/skoltech_gate_2.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+    </link>
+  </model>
+
+      <model name='gate_4'>
+      <static>1</static>
+      <pose frame=''>8 8 0 0 0 0.8</pose>
+      <link name='gate_4'>
+        <visual name='vis_gate'>
+          <geometry>
+            <mesh>
+              <uri>/home/sim/ardupilot_docker/catkin_ws/src/drone_sim/models/irs_gates/skoltech_gate_3.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='col_gate'>
+          <geometry>
+            <mesh>
+              <uri>/home/sim/ardupilot_docker/catkin_ws/src/drone_sim/models/irs_gates/skoltech_gate_3.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+    </link>
+  </model>
+
+
+
+      <model name='gate_5'>
+      <static>1</static>
+      <pose frame=''>1 4 0 0 0 1.57</pose>
+      <link name='gate_5'>
+        <visual name='vis_gate'>
+          <geometry>
+            <mesh>
+              <uri>/home/sim/ardupilot_docker/catkin_ws/src/drone_sim/models/irs_gates/skoltech_gate_1.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='col_gate'>
+          <geometry>
+            <mesh>
+              <uri>/home/sim/ardupilot_docker/catkin_ws/src/drone_sim/models/irs_gates/skoltech_gate_1.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+    </link>
+  </model>
+
+<model name='cylinder_1'>
+  <static>1</static>  <!-- Set to 0 if the object should fall/move -->
+  <pose frame=''>2 0.2 0 0 0 0</pose>  <!-- x, y, z, roll, pitch, yaw -->
+  <link name='cylinder_link'>
+    <visual name='visual'>
+      <geometry>
+        <cylinder>
+          <radius>0.1</radius> <!-- Set desired radius -->
+          <length>4.0</length> <!-- Set desired length (height) -->
+        </cylinder>
+      </geometry>
+    </visual>
+    <collision name='collision'>
+      <geometry>
+        <cylinder>
+          <radius>0.1</radius>
+          <length>4.0</length>
+        </cylinder>
+      </geometry>
+    </collision>
+  </link>
+</model>
+
+
+<model name='cylinder_2'>
+  <static>1</static>  <!-- Set to 0 if the object should fall/move -->
+  <pose frame=''>6 2 0 0 0 0</pose>  <!-- x, y, z, roll, pitch, yaw -->
+  <link name='cylinder_link'>
+    <visual name='visual'>
+      <geometry>
+        <cylinder>
+          <radius>0.1</radius> <!-- Set desired radius -->
+          <length>4.0</length> <!-- Set desired length (height) -->
+        </cylinder>
+      </geometry>
+    </visual>
+    <collision name='collision'>
+      <geometry>
+        <cylinder>
+          <radius>0.1</radius>
+          <length>4.0</length>
+        </cylinder>
+      </geometry>
+    </collision>
+  </link>
+</model>
+
+
+<model name='cylinder_3'>
+  <static>1</static>  <!-- Set to 0 if the object should fall/move -->
+  <pose frame=''>8 2 0 0 0 0</pose>  <!-- x, y, z, roll, pitch, yaw -->
+  <link name='cylinder_link'>
+    <visual name='visual'>
+      <geometry>
+        <cylinder>
+          <radius>0.1</radius> <!-- Set desired radius -->
+          <length>4.0</length> <!-- Set desired length (height) -->
+        </cylinder>
+      </geometry>
+    </visual>
+    <collision name='collision'>
+      <geometry>
+        <cylinder>
+          <radius>0.1</radius>
+          <length>4.0</length>
+        </cylinder>
+      </geometry>
+    </collision>
+  </link>
+</model>
+
+
+<model name='sphere_1'>
+  <static>1</static>
+  <pose frame=''>8 6 1.75 0 0 0</pose>  <!-- x, y, z, roll, pitch, yaw -->
+  <link name='sphere_link'>
+    <visual name='visual'>
+      <geometry>
+        <sphere>
+          <radius>0.2</radius> <!-- Set desired radius -->
+        </sphere>
+      </geometry>
+    </visual>
+    <collision name='collision'>
+      <geometry>
+        <sphere>
+          <radius>0.2</radius>
+        </sphere>
+      </geometry>
+    </collision>
+  </link>
+</model>
+
+<model name='sphere_2'>
+  <static>1</static>
+  <pose frame=''>6 7.5 1.2 0 0 0</pose>  <!-- x, y, z, roll, pitch, yaw -->
+  <link name='sphere_link'>
+    <visual name='visual'>
+      <geometry>
+        <sphere>
+          <radius>0.2</radius> <!-- Set desired radius -->
+        </sphere>
+      </geometry>
+    </visual>
+    <collision name='collision'>
+      <geometry>
+        <sphere>
+          <radius>0.2</radius>
+        </sphere>
+      </geometry>
+    </collision>
+  </link>
+</model>
+
+
+<model name='cylinder_4'>
+  <static>1</static>  <!-- Set to 0 if the object should fall/move -->
+  <pose frame=''>4 4 0 0 0 0</pose>  <!-- x, y, z, roll, pitch, yaw -->
+  <link name='cylinder_link'>
+    <visual name='visual'>
+      <geometry>
+        <cylinder>
+          <radius>0.1</radius> <!-- Set desired radius -->
+          <length>4.0</length> <!-- Set desired length (height) -->
+        </cylinder>
+      </geometry>
+    </visual>
+    <collision name='collision'>
+      <geometry>
+        <cylinder>
+          <radius>0.1</radius>
+          <length>4.0</length>
+        </cylinder>
+      </geometry>
+    </collision>
+  </link>
+</model>
+
+<model name='cylinder_5'>
+  <static>1</static>  <!-- Set to 0 if the object should fall/move -->
+  <pose frame=''>1 6.75 0 0 0 0</pose>  <!-- x, y, z, roll, pitch, yaw -->
+  <link name='cylinder_link'>
+    <visual name='visual'>
+      <geometry>
+        <cylinder>
+          <radius>0.1</radius> <!-- Set desired radius -->
+          <length>4.0</length> <!-- Set desired length (height) -->
+        </cylinder>
+      </geometry>
+    </visual>
+    <collision name='collision'>
+      <geometry>
+        <cylinder>
+          <radius>0.1</radius>
+          <length>4.0</length>
+        </cylinder>
+      </geometry>
+    </collision>
+  </link>
+</model>
+
+  </world>
+</sdf>

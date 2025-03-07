@@ -1,0 +1,6 @@
+<launch>
+
+	<node name="groubd" pkg="drone_sim" type="ground_station.py" output="screen">
+    </node>
+
+</launch>

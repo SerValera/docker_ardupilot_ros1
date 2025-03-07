@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name='gate'>
+    <static>1</static>
+    <pose frame=''>0 0 0 0 0 0</pose>
+    <link name='gate'>
+      <visual name='vis_gate'>
+        <geometry>
+          <mesh>
+            <uri>/home/sim/ardupilot_gazebo_docker/ardupilot_docker/catkin_ws/src/drone_sim/models/irs_gates/gate_1/skoltech_gate_1.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name='col_gate'>
+        <geometry>
+          <mesh>
+            <uri>/home/sim/ardupilot_gazebo_docker/ardupilot_docker/catkin_ws/src/drone_sim/models/irs_gates/gate_1/skoltech_gate_1.dae</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <bounce/>
+          <friction>
+            <torsional>
+              <ode/>
+            </torsional>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <self_collide>0</self_collide>
+      <enable_wind>0</enable_wind>
+      <kinematic>0</kinematic>
+    </link>
+  </model>
+</sdf>

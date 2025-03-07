@@ -1,0 +1,8 @@
+speed_main: 2.0
+speed_aruco: 1.5
+speed_fast_main: 2.0
+
+trajectory_type: 1 #1 cyrcke, 2 sqare
+n_step_future: 6
+
+is_collect_data_set: False
