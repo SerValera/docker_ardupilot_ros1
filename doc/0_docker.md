@@ -42,7 +42,7 @@ sudo docker run -it --privileged --ipc=host --net=host \
 
 #### 5. To enter the docker use:
 ``` bash
-docker exec -it ardupilot bash
+docker exec -it ardupilot_sim bash
 ```
 
 ### 6. In docker, run ONCE for ardupilot.
