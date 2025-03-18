@@ -2,7 +2,7 @@
 
 ### 1. Clone repository
 ```bash
-git clone https://github.com/SerValera/ardupilot_docker.git
+git clone https://github.com/SerValera/docker_ardupilot_ros1.git
 cd ardupilot_docker
 ```
 
@@ -23,7 +23,7 @@ sudo docker run -it --privileged --ipc=host --net=host \
 -v /tmp/.X11-unix:/tmp/.X11-unix:rw \
 -v ~/.Xauthority:/home/sim/.Xauthority \
 -v ./:/home/sim/ardupilot_docker:rw \
--e DISPLAY=$DISPLAY -p 14570:14570/udp --name=ardupilot_sim ardupilot_docker-drone_sim bash
+-e DISPLAY=$DISPLAY -p 14570:14570/udp --name=ardupilot_sim docker_ardupilot_ros1-drone_sim bash
 ```
 
 
@@ -37,7 +37,7 @@ sudo docker run -it --privileged --ipc=host --net=host \
 -v ./:/home/sim/ardupilot_docker:rw \
 --runtime=nvidia --gpus all \
 -e NVIDIA_DRIVER_CAPABILITIES=all \
--e DISPLAY=$DISPLAY -p 14570:14570/udp --name=px4 ardupilot_docker-drone_sim:latest bash
+-e DISPLAY=$DISPLAY -p 14570:14570/udp --name=px4 docker_ardupilot_ros1-drone_sim:latest bash
 ```
 
 #### 5. To enter the docker use:
